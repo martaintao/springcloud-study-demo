@@ -1,0 +1,17 @@
+server:
+  port: 8086
+
+spring:
+  application:
+    name: cloud-consul-provide-userinfo-service
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3316/springcloud2020?characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=true&verifyServerCertificate=false
+    username: root
+    password: Chinaunicom@2019
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}

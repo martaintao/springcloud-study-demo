@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.martain.study</groupId>
+    <artifactId>springcloud</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>cloud-common-api</module>
+        <module>cloud-common-model</module>
+        <module>cloud-provide-userinfo8081</module>
+        <module>cloud-consumer-useradmin8082</module>
+        <module>cloud-common</module>
+        <module>cloud-server-eureka8080</module>
+        <module>cloud-eureka-provide-userinfo8081</module>
+        <module>cloud-eureka-consumer-useradmin8082</module>
+        <module>cloud-server-eureka8090</module>
+        <module>cloud-zookeeper-provide-userinfo8084</module>
+        <module>cloud-zookeeper-consume-useradmin8085</module>
+        <module>cloud-consul-provide-userinfo8086</module>
+        <module>cloud-consul-consume-useradmin8087</module>
+        <module>cloud-eureka-consumer-ribbon-useradmin80</module>
+        <module>cloud-eureka-provide-userinfo8082</module>
+        <module>cloud-eureka-consumer-openfeign-useradmin80</module>
+        <module>cloud-eureka-hystrix-provide-simulation</module>
+        <module>cloud-eureka-consume-openfeign-hystrix-simulation80</module>
+        <module>cloud-hystrix-dashboard9000</module>
+        <module>cloud-springcloud-gateway9090</module>
+        <module>cloud-config-server7070</module>
+        <module>cloud-config-client7001</module>
+        <module>cloud-stream-rabbitmq-provider8801</module>
+        <module>cloud-stream-rabbitmq-consume8802</module>
+        <module>cloudalibab-nacos-provide-userinfo9001</module>
+        <module>cloudalibab-nacos-provide-userinfo9002</module>
+        <module>cloudalibab-nacos-consume-useradmin9091</module>
+        <module>cloudalibab-nacos-config-test99</module>
+    </modules>
+
+    <!--  这里限定版本  -->
+    <properties>
+        <java.version>1.8</java.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <!--maven编译代码时指定编码-->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring.boot.version>2.2.2</spring.boot.version>
+        <mysql.version>8.0</mysql.version>
+        <mybatis.spring.boot.version></mybatis.spring.boot.version>
+        <mybatis.dynamic.sql>1.1.4</mybatis.dynamic.sql>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--spring boot 2.2.2-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>2.2.2.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--spring cloud Hoxton.SR1-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Hoxton.SR1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--     SpringCloud Alibaba       -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>2.1.0.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.12</version>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+
+
+</project>

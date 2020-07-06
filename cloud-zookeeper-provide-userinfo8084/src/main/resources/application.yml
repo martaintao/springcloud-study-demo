@@ -1,0 +1,14 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: cloud-zookeeper-provide-userinfo-service
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3316/springcloud2020?characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=true&verifyServerCertificate=false
+    username: root
+    password: Chinaunicom@2019
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    zookeeper:
+      connect-string: 127.0.0.1:2181
